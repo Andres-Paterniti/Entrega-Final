@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Info del Usuario{% endblock title %}
+
+{% block content %}
+<h4>{{user.apellido}}, {{user.nombre}}</h4>
+<span><b>DNI:</b> {{user.dni}}</span>
+
+<br>
+<a href="{% url 'frontpage' %}">Volver al inicio</a>
+<a href="{% url 'logout' %}">Logout</a>
+
+{% endblock content %}

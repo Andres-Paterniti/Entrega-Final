@@ -1,0 +1,40 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Lista de usuarios{% endblock title %}
+
+
+{% block content %}
+<h1 class="navbar-item is-size-5 has-text-weight-semibold"><strong>Lista de Autores</strong></h1>
+<a href="{% url 'crear_usuario' %}">Añadir</a>
+<br><br>
+
+<table class="table">
+  <tbody>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Ver</th>
+      <td>Editar</td>
+      <td>Eliminar</td>
+
+    </tr>
+    {% for usuario in object_list %}
+    <tr>
+      <td>{{ usuario.nombre }}</td>
+      <td>{{ usuario.apellido }}</td>
+      <td>
+        <a href="{% url 'ver_usuario' usuario.id %}">Ver</a>
+      </td>
+      <td>
+        <a href="{% url 'editar_usuario' usuario.id %}">Editar</a>
+      </td>
+      <td>
+        <a href="{% url 'eliminar_usuario' usuario.id %}">Eliminar</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+{% endblock content %}

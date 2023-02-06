@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+
+{% block title %} About | {% endblock %} 
+
+{% block content %}
+<section class="hero">
+    <div class="hero-body">
+        <div class="container">
+            <section class="section">
+                <div class="columns">
+                    <div class="column is-8 is-offset-2">
+                        {% if post.imagen %}
+                            <figure class="image mb-6">
+                                <img src="{{ post.imagen.url }}">
+                            </figure>
+                        {% endif %}
+
+                            <div class="content is-medium">
+                                    <h1>Andres Paterniti</h1>
+                                    <p>Especialista en cultivos dentro de la Bolsa de Cereales de Buenos Aires llevando a 
+                                        cabo tareas de análisis de datos de las principales variables que hacen a la estimación de área, 
+                                        rendimiento y producción de cada campaña en Argentina. Amplia experiencia en giras agrícolas 
+                                        llevando a cabo tareas de coordinación, toma de datos de verdad a campo y estimación de rendimientos en sitio. 
+                                        Experiencia en el análisis de datos, análisis de imágenes satelitales y herramientas GIS, conocimientos de Python, 
+                                        redacción y publicación digital, presentaciones publicas, trabajo equipo. Ingles escrito, oral y lectura avanzada.</p>
+                                    <p>{{post.texto}}</p>
+                                </a>
+                            </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+{% endblock %}

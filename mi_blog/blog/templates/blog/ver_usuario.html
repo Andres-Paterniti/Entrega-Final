@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Info del Usuario{% endblock title %}
+
+{% block content %}
+<h4>{{object.apellido}}, {{object.nombre}}</h4>
+<span><b>DNI:</b> {{object.dni}}</span>
+
+<br>
+<a href="{% url 'lista_usuarios' %}">Volver a la lista</a>
+
+{% endblock content %}

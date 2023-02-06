@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<p>Tu username es <b>{{ object.username }}</b></p>
+
+<h3>Editar datos:</h3>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Guardar cambios"/>
+</form>
+<br>
+<h3>Subir tu Avatar</h3>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Subir imagen"/>
+</form>
+
+{% endblock content %}

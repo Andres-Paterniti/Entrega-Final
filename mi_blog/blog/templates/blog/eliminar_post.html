@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<span>Vas a eliminar al articulo titulado: {{object}}</span>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <br>
+  <br>
+  <input type="submit" value="Confirmar" />
+</form>
+{% endblock content %}

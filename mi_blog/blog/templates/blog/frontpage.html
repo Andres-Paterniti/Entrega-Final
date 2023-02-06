@@ -1,0 +1,33 @@
+{% extends 'blog/base.html' %}
+
+{% block title %} Home | {% endblock %} 
+
+{% block content %}
+<section class="hero">
+    <div class="hero-body">
+        <div class="container">
+            <section class="section">
+                <div class="columns">
+                    <div class="column is-8 is-offset-2">
+                        <a href="{% url 'crear_post' %}">Añadir nueva entrada de blog</a>
+                        
+                        {% for post in posts %}
+                            <div class="content is-medium">
+                                <a href= "{% url 'detalle' post.id %}">
+                                    <br>
+                                    <h2 class="subtitle is-4">{{ post.fecha_publicacion}}</h2>
+                                    <h1 class="title">{{ post.titulo }}</h1>
+                                    <p>{{ post.intro }}</p>
+                                </a>
+                            </div>
+                            {% empty %}
+                            <div class="content">
+                                <p>Todavia no hay ninguna publicacion, se el primero en sumarte al Blog</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+{% endblock %}

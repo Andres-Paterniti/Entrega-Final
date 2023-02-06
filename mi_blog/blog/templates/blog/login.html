@@ -1,0 +1,10 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Iniciar Sesión" />
+</form>
+<a href="{% url 'registro' %}" ">Crear cuenta</a>
+{% endblock content %}
